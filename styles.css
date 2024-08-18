@@ -118,3 +118,20 @@ footer {
 .container_header {
  text-align: center;
 }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    footer {
+        bottom: -7250px;
+    }
+} 
+
+@media only screen and (max-width: 600px) {
+    .hero p {
+        font-size: 2.4rem;
+    }
+    footer {
+        bottom: -4850px;
+    }
+} 
