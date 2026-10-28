@@ -1,3 +1,9 @@
+:root {
+    --font-serif: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    --text: #ece6d8;
+    --accent: #c9a96e;
+}
+
 /* Reset some default styles */
 body, h1, h2, h3, p, a {
     margin: 0;
@@ -9,15 +15,16 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
     line-height: 1.6;
-    color: #f4f4f4;
+    color: var(--text);
     background-color: #444;
 }
 
 header {
     background: #444;
-    color: #f4f4f4;
+    color: var(--text);
     padding-bottom: 60px;
 }
 
@@ -42,7 +49,7 @@ nav {
 }
 
 .nav-links a {
-    color: #f4f4f4;
+    color: var(--text);
     text-decoration: none;
     font-size: 1rem;
 }
@@ -60,12 +67,14 @@ nav {
     text-align: center;
     padding: 80px 20px;
     background: #444;
-    font-family: serif;
+    font-family: var(--font-serif);
 }
 
 .hero h1 {
     margin-bottom: 20px;
     font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--accent);
+    font-weight: 400;
 }
 
 .hero p {
@@ -100,12 +109,14 @@ section h2 {
 
 .podcast {
     background: #3a3a3a;
-    border-top: 1px solid #666;
-    font-family: serif;
+    border-top: 1px solid var(--accent);
+    font-family: var(--font-serif);
 }
 
 .podcast h2 {
     font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--accent);
+    font-weight: 400;
 }
 
 .podcast p {
@@ -125,13 +136,20 @@ section h2 {
 
 footer {
     background: #222;
-    color: #f4f4f4;
+    color: var(--text);
     padding: 20px;
     text-align: center;
 }
 
 footer a {
-    color: #f4f4f4;
+    color: var(--text);
+    text-decoration-color: var(--accent);
+    text-underline-offset: 3px;
+}
+
+footer a:hover,
+footer a:focus-visible {
+    color: var(--accent);
 }
 
 .footer-links {
@@ -152,18 +170,18 @@ footer a {
 }
 
 .nav-listen {
-    color: #f4f4f4;
+    color: var(--text);
     text-decoration: none;
-    font-family: serif;
+    font-family: var(--font-serif);
     font-size: 1.1rem;
     padding: 8px 16px;
-    border: 1px solid #f4f4f4;
+    border: 1px solid var(--accent);
     border-radius: 4px;
 }
 
 .nav-listen:hover,
 .nav-listen:focus-visible {
-    background: #f4f4f4;
+    background: var(--accent);
     color: #333;
 }
 
