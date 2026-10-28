@@ -113,16 +113,6 @@ section h2 {
     font-size: clamp(1.1rem, 2.5vw, 1.5rem);
 }
 
-.podcast-player {
-    display: block;
-    width: 100%;
-    max-width: 600px;
-    min-width: min(100%, 430px);
-    height: 150px;
-    margin: 0 auto 24px;
-    border: none;
-}
-
 .podcast img {
     border: none;
     max-width: 100%;
