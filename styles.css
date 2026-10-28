@@ -130,6 +130,16 @@ footer {
     text-align: center;
 }
 
+footer a {
+    color: #f4f4f4;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
 .container {
     width: 80%;
     margin: 0 auto;
