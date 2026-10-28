@@ -4,6 +4,10 @@ body, h1, h2, h3, p, a {
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -94,6 +98,27 @@ section h2 {
     font-size: 2rem;
 }
 
+.podcast {
+    background: #3a3a3a;
+    border-top: 1px solid #666;
+    font-family: serif;
+}
+
+.podcast h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.podcast p {
+    margin-bottom: 20px;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+}
+
+.podcast img {
+    border: none;
+    max-width: 100%;
+    height: auto;
+}
+
 .feature {
     margin-bottom: 30px;
 }
@@ -111,7 +136,25 @@ footer {
 }
 
 .container_header {
- text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-listen {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-family: serif;
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    border: 1px solid #f4f4f4;
+    border-radius: 4px;
+}
+
+.nav-listen:hover,
+.nav-listen:focus-visible {
+    background: #f4f4f4;
+    color: #333;
 }
 
 @media only screen and (max-width: 600px) {
