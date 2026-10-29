@@ -250,14 +250,10 @@ footer a:focus-visible {
 }
 
 .book-finished,
-.book-acquired {
+.book-details {
     margin-bottom: 20px;
     font-size: 1rem;
     opacity: 0.75;
-}
-
-.book-finished:has(+ .book-acquired) {
-    margin-bottom: 4px;
 }
 
 .read-more,
@@ -279,7 +275,7 @@ footer a:focus-visible {
     text-decoration-thickness: 2px;
 }
 
-.book-text p:not(.book-author):not(.book-finished):not(.book-acquired) {
+.book-text p:not(.book-author):not(.book-finished):not(.book-details) {
     margin-bottom: 1em;
     font-size: 1.2rem;
 }
