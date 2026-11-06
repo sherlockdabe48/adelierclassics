@@ -30,7 +30,7 @@
             <p class="commonplace-intro">Notes on the books we've read, and the moments that came with them.</p>
 
             <!-- To add a book: copy one <article class="book"> block, change the image, title, author and notes. -->
-            <article class="book">
+            <article class="book" id="symposium">
                 <img src="assets/images/platon_symposium.jpg" alt="Cover of Plato's Symposium">
                 <div class="book-text">
                     <h2>The Symposium</h2>
@@ -44,7 +44,7 @@
                 </div>
             </article>
 
-            <article class="book">
+            <article class="book" id="republic">
                 <img src="assets/images/plato_republic.jpg" alt="Cover of Plato's Republic">
                 <div class="book-text">
                     <h2>The Republic</h2>
@@ -58,7 +58,7 @@
                 </div>
             </article>
 
-            <article class="book">
+            <article class="book" id="odyssey">
                 <img src="assets/images/homer_odyssey_.jpg" alt="Cover of Homer's Odyssey">
                 <div class="book-text">
                     <h2>The Odyssey</h2>
@@ -92,24 +92,39 @@
             var less = text.querySelector('.read-less');
             var extra = text.querySelectorAll('.note-more');
 
-            more.addEventListener('click', function () {
+            function setOpen(open) {
                 extra.forEach(function (el) {
-                    el.hidden = false;
+                    el.hidden = !open;
                 });
-                more.hidden = true;
-                more.setAttribute('aria-expanded', 'true');
+                more.hidden = open;
+                more.setAttribute('aria-expanded', String(open));
+            }
+
+            more.addEventListener('click', function () {
+                setOpen(true);
                 less.focus();
             });
 
             less.addEventListener('click', function () {
-                extra.forEach(function (el) {
-                    el.hidden = true;
-                });
-                more.hidden = false;
-                more.setAttribute('aria-expanded', 'false');
+                setOpen(false);
                 more.focus();
             });
+
+            // A link like commonplace.html#symposium opens that book's full note.
+            text.closest('.book').openNote = function () {
+                setOpen(true);
+            };
         });
+
+        function openLinkedNote() {
+            var book = document.getElementById(location.hash.slice(1));
+            if (book && book.openNote) {
+                book.openNote();
+                book.scrollIntoView();
+            }
+        }
+        openLinkedNote();
+        window.addEventListener('hashchange', openLinkedNote);
     </script>
 </body>
 </html>
